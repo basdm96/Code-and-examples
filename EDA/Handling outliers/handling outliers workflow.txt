@@ -1,0 +1,67 @@
+1. Investigate the Outliers
+
+The first step is always to figure out why the outliers exist. Are they mistakes, or do they represent something real and important? Use your understanding of the subject matter and visualization tools like box plots or scatter plots to examine these unusual data points. This initial analysis will guide your entire strategy.
+
+2. Determine if Outliers are Errors
+
+Your investigation should reveal whether the outliers are simply data errors (e.g., typos, measurement failures).
+
+    If YES, they are errors: You can choose to delete or remove them.
+
+        Pros: It's a simple method that can improve the performance of models sensitive to extreme values.
+
+        Cons: You lose information and reduce your sample size.
+
+        When to Use: This is best when you have a large dataset, can confirm the data points are errors, and are not specifically interested in studying extreme               events.
+
+        Common Methods: Use statistical rules like the Interquartile Range (IQR) or Z-scores to identify and remove outliers automatically, or do it manually if you           have a small number of clear errors.
+
+3. Determine if Outliers are Genuine but Problematic
+
+If the outliers are not errors, they are genuine but extreme values. Now, you need to decide how they affect your model.
+
+    If your model is robust or the outliers are important for your analysis: You can choose to retain (keep) them.
+
+        Pros: This preserves all your original information without altering the data.
+
+        Cons: It can distort the results of statistical models that are not robust to outliers (like linear regression).
+
+        When to Use: This is appropriate when using robust models (like tree-based models), when the goal is to analyze rare events, or when the dataset is very large.
+
+        Common Methods: Use statistics that are less sensitive to outliers, like the median and Median Absolute Deviation (MAD), or use inherently robust models like          Random Forests or Gradient Boosting.
+
+    If your model is not robust and the outliers are a problem: Your next consideration is the data's distribution. If the data is skewed, you can transform it.
+
+        Pros: This can help normalize the data's distribution without losing any data points.
+
+        Cons: The interpretation of the transformed features can be less intuitive, and it might not always be effective.
+
+        When to Use: This is ideal for skewed data when your model (like linear regression) assumes normality.
+
+        Common Methods: Apply mathematical functions like a Log, Square Root, or Box-Cox transformation.
+
+4. Consider Replacement or Robust Methods
+
+If transformation isn't suitable, consider the size of your dataset and the impact of data loss.
+
+    If your sample size is small and you can't afford to lose data: You can choose to impute or replace the outliers.
+
+        Pros: This retains your sample size and can maintain the data's structure.
+
+        Cons: You are introducing artificial data, which can mask the underlying variability and issues.
+
+        When to Use: This is useful for small datasets where you suspect errors but cannot afford to delete the records.
+
+        Common Methods: Replace the outlier with the median of the feature, use a regression model to predict its value, or use techniques like K-Nearest Neighbors (KNN) imputation or Winsorization (capping the outlier at a certain percentile).
+
+    If none of the above fit, or as a general good practice: Use robust statistical methods.
+
+        Pros: This approach provides reliable estimates without altering the original data.
+
+        Cons: These methods can be more complex and may be less powerful than standard methods if there are no outliers.
+
+        When to Use: This is a strong choice when you know outliers are legitimate values, the data is generally messy, and your primary goal is to get a robust and           reliable estimate.
+
+        Common Methods: Use Robust Regression techniques or models that are naturally resistant to outliers, such as tree-based models.
+
+Final Step: Apply and Re-evaluate

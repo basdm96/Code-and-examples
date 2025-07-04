@@ -1,0 +1,27 @@
+You are an expert data scientist. I need a Python code snippet for a Jupyter notebook that demonstrates how to apply the [Technique Name, e.g., Log Transformation, Isolation Forest] to a dataset.
+
+Please ensure the code includes the following steps:
+
+    Load a relevant sample dataset from scikit-learn.
+
+    Select a feature or features to work with.
+
+    Apply the [Technique Name] to the selected data.
+
+[Optional: Include the following section only if the technique is a machine learning model with hyperparameters, like Isolation Forest, LOF, or SVM]:
+
+    Before applying the final model, add a section for hyperparameter tuning. Create a manual grid search loop to test different combinations of the most important hyperparameters (e.g., [hyperparameter_1], [hyperparameter_2]) and display the results in a pandas DataFrame. Then, show how to apply the final model using a chosen set of "best" parameters.
+
+Show the result of applying the technique.
+
+    For outlier detection methods: Create a new pandas DataFrame containing only the identified outlier rows. Add a column to this DataFrame showing the calculated outlier score.
+
+    For data transformations (like log transform, scaling): Create a new column in the original DataFrame to store the transformed data. Also, create a simple before-and-after visualization (e.g., two histograms) to show the effect of the transformation.
+
+Finally, print the head of the resulting DataFrame and add short, understandable comments throughout the code explaining each step and the purpose of the technique.
+
+How to use it:
+
+    For a model like Isolation Forest, you would fill in the blanks and keep the optional section.
+
+    For a technique like Log Transformation, you would fill in the blanks but remove the optional hyperparameter tuning section from your request. This makes the prompt adaptable to almost any data processing task.

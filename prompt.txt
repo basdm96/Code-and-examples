@@ -2,6 +2,9 @@ You are an expert data scientist. I need a Python code snippet for a Jupyter not
 
 Please ensure the code includes the following steps:
 
+    Give some comments about when to use this technique and what requirements it has for the data
+
+
     Load a relevant sample dataset from scikit-learn.
 
     Select a feature or features to work with.
